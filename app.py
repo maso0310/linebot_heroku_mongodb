@@ -13,20 +13,19 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
+from mongodb_function import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
-import tempfile, os
-import datetime
-import time
+import  os
 #======python的函數庫==========
 
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
-line_bot_api = LineBotApi('R60lcR7k2nfcCzSfkRpAFkv6DoiXwJLIBf+zdR8qBfRig60rEZrAoTbWd3pLvmuwJ99ko49MPfPOSuxFy2a/ztkgz7UTbnSFb9BHMKR9viDEVCYirsPhufBz3EE6jllolMzE5DE2wMqKNWP7Xui1vQdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('你的Channel AcessToken')
 # Channel Secret
-handler = WebhookHandler('55efd2ee0104755237f28a9567334f3b')
+handler = WebhookHandler('你的Channel Secret')
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -35,6 +34,7 @@ def callback():
     signature = request.headers['X-Line-Signature']
     # get request body as text
     body = request.get_data(as_text=True)
+    write_one_data(eval(body))
     app.logger.info("Request body: " + body)
     # handle webhook body
     try:
@@ -66,6 +66,29 @@ def handle_message(event):
     elif '功能列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
+
+    #======新增的MongoDB操作範例======
+    elif 'mongodb讀取' in msg:
+        datas = read_many_datas()
+        print(type(datas))
+        data_text = '\n'.join(datas)
+        message = TextSendMessage(text=data_text[:5000])
+        line_bot_api.reply_message(event.reply_token, message)
+
+    elif '對話紀錄' in msg:
+        datas = read_chat_records()
+        print(type(datas))
+        data_text = '\n'.join(datas)
+        message = TextSendMessage(text=data_text[:5000])
+        line_bot_api.reply_message(event.reply_token, message)
+
+    elif 'mongodb刪除' in msg:
+        delete_all_data()
+        message = TextSendMessage(text="資料刪除完畢")
+        line_bot_api.reply_message(event.reply_token, message)
+
+    #======新增的MongoDB操作範例======
+
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)

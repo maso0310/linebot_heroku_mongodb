@@ -11,16 +11,16 @@ git clone https://github.com/maso0310/linebot_heroku_mongodb.git
 
 ![要改的地方](https://i.imgur.com/7auNd6C.png)
 
-[MongoDB官網](https://www.mongodb.com/)<br>
+3.[進入 MongoDB官網 並註冊帳號](https://www.mongodb.com/)<br>
 
-3.在MongoDB官網註冊帳號之後，依照官網指示的五個步驟逐漸建立資料庫<br>
-4.在建立資料庫之後，點選Connect，選擇Python環境，獲取MongoDB串聯網址，如下圖：<br>
+4.在MongoDB官網註冊帳號之後，依照官網指示的五個步驟逐漸建立資料庫<br>
+5.在建立資料庫之後，點選Connect，選擇Python環境，獲取MongoDB串聯網址，如下圖：<br>
 
 
 ![mongodb網址的位置](https://i.imgur.com/HLCk99r.png)<br>
 
-[LINE Developer官網](https://developers.line.biz/)<br>
-5.進入LINE Developer官網，將LINE@帳號的Channel Access Token、Channel Secret置換成自己的，位置如下圖<br>
+6.[進入LINE Developer官網建立LINE BOT帳號](https://developers.line.biz/)<br>
+7.進入LINE Developer官網，將LINE@帳號的Channel Access Token、Channel Secret置換成自己的，位置如下圖<br>
 <br>
 
 ![LINE的Access Token跟Secret](https://i.imgur.com/6QmQNpe.png)

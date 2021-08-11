@@ -32,7 +32,8 @@ col_find(): 找到最新的一筆資料<br>
 [MongoDB官網](https://www.mongodb.com/)<br>
 ![mongodb網址的位置](https://i.imgur.com/HLCk99r.png)<br>
 
-2.將LINE@帳號的Channel Acess Token、Channel Secret置換成自己的<br>
+2.將LINE@帳號的Channel Access Token、Channel Secret置換成自己的<br>
 <br>
 
 [LINE Developer官網](https://developers.line.biz/)<br>
+![LINE的Access Token跟Secret](https://i.imgur.com/6QmQNpe.png)

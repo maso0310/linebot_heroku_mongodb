@@ -23,10 +23,12 @@ col_find(): 找到最新的一筆資料<br>
 
 ### 操作步驟：<br>
 1.註冊MongoDB帳號，並且建立一個帳號建立資料庫<br>
-2.將LINE@帳號的Channel Acess Token、Channel Secret置換成自己的<br>
 <br>
 
 [MongoDB官網](https://www.mongodb.com/)<br>
 ![mongodb網址的位置](https://i.imgur.com/HLCk99r.png)<br>
+
+2.將LINE@帳號的Channel Acess Token、Channel Secret置換成自己的<br>
+<br>
 
 [LINE Developer官網](https://developers.line.biz/)<br>

@@ -67,27 +67,40 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
 
-    #======新增的MongoDB操作範例======
-    elif 'mongodb讀取' in msg:
+    #======MongoDB操作範例======
+
+    elif '@讀取' in msg:
         datas = read_many_datas()
-        print(type(datas))
-        data_text = '\n'.join(datas)
-        message = TextSendMessage(text=data_text[:5000])
+        datas_len = len(datas)
+        message = TextSendMessage(text=f'資料數量，一共{datas_len}條')
         line_bot_api.reply_message(event.reply_token, message)
 
-    elif '對話紀錄' in msg:
+    elif '@查詢' in msg:
+        datas = col_find('events')
+        message = TextSendMessage(text=str(datas))
+        line_bot_api.reply_message(event.reply_token, message)
+
+    elif '@對話紀錄' in msg:
         datas = read_chat_records()
         print(type(datas))
-        data_text = '\n'.join(datas)
+        n = 0
+        text_list = []
+        for data in datas:
+            if '@' in data:
+                continue
+            else:
+                text_list.append(data)
+            n+=1
+        data_text = '\n'.join(text_list)
         message = TextSendMessage(text=data_text[:5000])
         line_bot_api.reply_message(event.reply_token, message)
 
-    elif 'mongodb刪除' in msg:
-        delete_all_data()
-        message = TextSendMessage(text="資料刪除完畢")
+    elif '@刪除' in msg:
+        text = delete_all_data()
+        message = TextSendMessage(text=text)
         line_bot_api.reply_message(event.reply_token, message)
 
-    #======新增的MongoDB操作範例======
+    #======MongoDB操作範例======
 
     else:
         message = TextSendMessage(text=msg)

@@ -69,3 +69,8 @@ git clone https://github.com/maso0310/linebot_heroku_mongodb.git
 **@查詢**: 查詢一筆最新的資料，並以字串型式回傳到LINE對話框<br>
 **@對話紀錄**: 查詢透過webhook event傳送到LINEBOT的文字訊息紀錄，整理後回傳至對話框<br>
 **@刪除**: 將目前所儲存的資料刪除，並回傳刪除的資料筆數於對話框<br>
+
+
+======
+如果喜歡這個教學內容請訂閱[Maso的萬事屋](https://www.youtube.com/playlist?list=PLG4d6NSc7_l5-GjYiCdYa7H5Wsz0oQA7U)Youtube頻道
+也歡迎私下交流 LINE ID: mastermaso

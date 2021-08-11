@@ -9,7 +9,7 @@ git clone https://github.com/maso0310/linebot_heroku_mongodb.git
 2.修改程式當中的三個地方：LINEBOT Channel Access Token、Channel Secret以及MongoDB的資料庫連結網址，如下圖<br>
 
 
-
+![要改的地方](https://i.imgur.com/7auNd6C.png)
 
 [MongoDB官網](https://www.mongodb.com/)<br>
 

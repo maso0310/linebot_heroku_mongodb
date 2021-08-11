@@ -1,5 +1,5 @@
-#這個是基於python程式碼與MongoDB互動的範例，其中包括了：
-###詳細內容請見mongodb_function.py
+# 這個是基於python程式碼與MongoDB互動的範例，其中包括了：
+### 詳細內容請見mongodb_function.py
 
 1.資料庫(Database)的建置
 2.集合(Collection)的建置

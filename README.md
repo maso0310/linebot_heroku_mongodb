@@ -1,5 +1,6 @@
-## Heroku / MongoDB / LINE BOT：
+## 建議的聊天機器人資料庫 Heroku / MongoDB / LINE BOT
 
+### MongoDB的資料庫架構<br>
 1.資料庫(Database)的建置<br>
 2.集合(Collection)的建置<br>
 3.文檔(Document)的CRUD(建立、閱讀、修改、刪除)<br>

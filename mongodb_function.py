@@ -12,7 +12,6 @@ print(client.database_names())#列出client中的資料庫名稱
 print(db.collection_names())#列出db中的集合名稱
 print(col.count_documents())#計算col中的文檔(資料)數量
 
-data_list = []
 
 #判斷key是否在指定的dictionary當中，若有則return True
 def dicMemberCheck(key, dicObj):
@@ -31,6 +30,7 @@ def write_many_datas(data):
 
 #讀取所有LINE的webhook event紀錄資料
 def read_many_datas():
+    data_list = []
     for data in col.find():
         data_list.append(str(data))
 
@@ -39,6 +39,7 @@ def read_many_datas():
 
 #讀取LINE的對話紀錄資料
 def read_chat_records():
+    data_list = []
     for data in col.find():
         if dicMemberCheck('events',data):
             if dicMemberCheck('message',data['events'][0]):
@@ -53,6 +54,7 @@ def read_chat_records():
 
 #刪除所有資料
 def delete_all_data():
+    data_list = []
     for x in col.find():
         data_list.append(x)   
 

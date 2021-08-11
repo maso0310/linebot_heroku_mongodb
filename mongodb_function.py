@@ -10,7 +10,7 @@ col = db['Database']
 
 print(client.database_names())#列出client中的資料庫名稱
 print(db.collection_names())#列出db中的集合名稱
-print(col.count_documents())#計算col中的文檔(資料)數量
+print(col.count_documents({}))#計算col中的文檔(資料)數量
 
 
 #判斷key是否在指定的dictionary當中，若有則return True

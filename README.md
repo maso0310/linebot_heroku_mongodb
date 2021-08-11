@@ -52,3 +52,18 @@ git clone https://github.com/maso0310/linebot_heroku_mongodb.git
 **delete_all_data()**: 刪除所有資料<br>
 **col_find()**: 找到最新的一筆資料<br>
 <br><br><br>
+
+### 儲存所有webhook event到MongoDB資料庫
+1.範例當中已經將LINE webhook event所傳送的JSON資料直接儲存於MongoDB資料庫
+2.寫入指令與資料範例如下所示
+![寫入的資料庫的指令](https://i.imgur.com/E8bN7bO.jpg)
+
+~~~
+{'_id': ObjectId('611293ef5d5e8a3922ce442c'), 'destination': 'U454e24915d621f68d70b9a509e195d93', 'events': [{'type': 'message', 'message': {'type': 'text', 'id': '14549285734851', 'text': '@讀取'}, 'timestamp': 1628607470353, 'source': {'type': 'user', 'userId': 'U64fcb80364ac73bb9a86f41826e9399a'}, 'replyToken': '9854eb2cc31b43179f27c2a8ca4519ee', 'mode': 'active'}]}
+~~~
+
+### 內建指令
+**@讀取**: 將目前以放入MongoDB資料庫的資料以字串型式回傳到LINE對話框<br>
+**@查詢**: 查詢一筆最新的資料，並以字串型式回傳到LINE對話框<br>
+**@對話紀錄**: 查詢透過webhook event傳送到LINEBOT的文字訊息紀錄，整理後回傳至對話框<br>
+**@刪除**: 將目前所儲存的資料刪除，並回傳刪除的資料筆數於對話框<br>

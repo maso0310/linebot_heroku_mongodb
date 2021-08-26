@@ -1,4 +1,5 @@
-# 操作步驟：<br>
+# 簡易的聊天機器人資料庫 Heroku / MongoDB / LINE BOT
+### 操作步驟：<br>
 
 1.下載程式碼
 ~~~
@@ -24,8 +25,6 @@ git clone https://github.com/maso0310/linebot_heroku_mongodb.git
 
 ![LINE的Access Token跟Secret](https://i.imgur.com/6QmQNpe.png)
 <br><br>
-
-## 簡易的聊天機器人資料庫 Heroku / MongoDB / LINE BOT
 
 ### MongoDB的資料庫架構步驟<br>
 1.讀取資料庫(Database)<br>

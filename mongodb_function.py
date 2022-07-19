@@ -77,4 +77,4 @@ def col_find(key):
     return data
 
 if __name__ == '__main__':
-    read_many_datas()
+    print(read_many_datas())

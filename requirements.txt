@@ -1,4 +1,4 @@
 line-bot-sdk
 flask
-pymongo
+pymongo==3.8.0
 dnspython==1.16.0

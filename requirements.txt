@@ -2,3 +2,4 @@ line-bot-sdk
 flask
 pymongo==3.8.0
 dnspython==1.16.0
+gunicorn
